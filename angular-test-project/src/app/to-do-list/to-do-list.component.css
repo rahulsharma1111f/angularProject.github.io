@@ -1,0 +1,12 @@
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  .div {
+    text-align: -webkit-center;
+  }

@@ -1,0 +1,26 @@
+<div class= "div">
+    <h3>Done List</h3>
+    <table id="table">
+        <tr>
+            <th></th>
+            <th>Task Name</th>
+            <th>Task Descrption</th>
+            <th>repeating Task</th>
+        </tr>
+        <tr *ngFor="let item of getDoneList() let i=index">
+            <td>
+                <input type="checkbox" (change)="checkboxValueChange(i)">
+            </td>
+
+            <td>
+                {{item.taskName}}
+            </td>
+            <td>
+                {{item.taskDescription}}
+            </td>
+            <td>
+                {{showRepeatingTask(item.repeatingTask) }}
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<div class= "div">
+    <form [formGroup]="form">
+
+        <div>
+            <label>Task Name</label>
+            <input type="text" formControlName="taskName" required (blur)="valueChanged()">
+        </div>
+
+        <div>
+            <label>Task Description</label>
+            <input type="text" formControlName="taskDescription" required (blur)="valueChanged()">
+        </div>
+
+        <div>
+            <label>Repeating Task</label>
+            <select formControlName="repeatingTask" required (change)="valueChanged()">
+                <option *ngFor="let item of list" [value]="item.id">{{item.value}}</option>
+            </select>
+        </div>
+
+    </form>
+</div>
+
+<br>
+
+<app-to-do-list (toDoListUpdateEmitter)="toDoListUpdate($event)"></app-to-do-list>
+
+<br>
+
+<app-done-list (doneListUpdateEmitter)="doneListUpdate($event)"></app-done-list>
